@@ -1,11 +1,10 @@
-from django.http import HttpResponse
 from django.shortcuts import render
+from .models import Post
 
 
 # Create your views here.
-def home(request):
-    return HttpResponse('hello')
-
-
-def name(request):
-    return HttpResponse('iliya')
+def posts(request):
+    context = {
+        'postss': Post.objects.all()
+    }
+    return render(request, 'blog/index.html', context)

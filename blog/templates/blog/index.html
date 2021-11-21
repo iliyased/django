@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>x  </title>
+</head>
+<body>
+{% for post in postss %}
+    <img src="{{ post.thumbnail.url }}"><br>
+    {{ post.title }} <br>
+    {{ post.description }}<br>
+    {{ post.slug }}
+
+{% endfor %}
+</body>
+</html>
